@@ -1,12 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ca">
+
+<?php 
+    $titolPagina = "Inicieu la sessió";
+    $pagina = "index";
+?>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Generador de Muixerangues">
 	<meta name="author" content="Miquel March">
 	<link rel="icon" type="image/x-icon" href="images/pinya.jpg">
-	<title>Inicieu la sessió</title>
+    <title><?php echo $titolPagina; ?></title>
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="css/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/signin.css">
@@ -21,7 +26,7 @@
 		</h1>
 		<form class="form-signin">
 			<img class="mb-4" src="images/pinya_gran.jpg" alt="Pinya (Generador de Muixerangues)" width="100" height="100">
-			<h1 class="h3 mb-3 font-weight-normal">Inicieu la sessió</h1>
+			<h1 class="h3 mb-3 font-weight-normal"><?php echo $titolPagina; ?></h1>
 			<label for="inputEmail" class="sr-only">Adreça electrònica</label>
 			<input type="email" id="inputEmail" class="form-control" placeholder="Adreça electrònica" required autofocus>
 			<label for="inputPassword" class="sr-only">Contrasenya</label>
@@ -37,9 +42,8 @@
 	</main>
 
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/fontawesome.min.js"></script>
+    <?php
+        include('inc/footer.php');
+    ?>
 </body>
 </html>
