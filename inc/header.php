@@ -3,11 +3,14 @@
 
     <nav class="navbar-nav-scroll">
         <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item <?php if($pagina =='index'){echo 'active';}?>">
+                <a class="nav-link" href="index.php"><i class="fas fa-user"></i></a>
+            </li>
             <li class="nav-item <?php if($pagina =='home'){echo 'active';}?>">
                 <a class="nav-link" href="home.php"><i class="fas fa-home"></i></a>
             </li>
             <li class="nav-item <?php if($pagina =='tecnica'){echo 'active';}?>">
-                <a class="nav-link" href="tecnica.php"><i class="fas fa-tools"></i></a>
+                <a class="nav-link" href="tecnica.php"><i class="fas fa-pencil-ruler"></i></a>
             </li>
             <li class="nav-item <?php if($pagina !='tecnica'){echo 'd-none';}?>">
                 <a class="nav-link" href="#">Muixeranguers/es</a>

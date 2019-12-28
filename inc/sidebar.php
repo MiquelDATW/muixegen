@@ -8,109 +8,43 @@
     </form>
 
     <nav class="collapse bd-links" id="bd-docs-nav">
-        <div class="bd-toc-item active">
+        <div class="bd-toc-item">
             <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
                 Getting started
             </a>
 
             <ul class="nav bd-sidenav">
                 <li>
-                    <a href="/docs/4.1/getting-started/introduction/">
-                        Introduction
-                    </a></li>
+                    <a href="/docs/4.1/getting-started/introduction/">Introduction</a>
+                </li>
                 <li>
-                    <a href="/docs/4.1/getting-started/download/">
-                      Download
-                    </a></li>
+                    <a href="/docs/4.1/getting-started/download/">Download</a>
+                </li>
                 <li>
-                    <a href="/docs/4.1/getting-started/contents/">
-                      Contents
-                    </a></li>
+                    <a href="/docs/4.1/getting-started/contents/">Contents</a>
+                </li>
                 <li>
-                    <a href="/docs/4.1/getting-started/browsers-devices/">
-                      Browsers & devices
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/javascript/">
-                      JavaScript
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/theming/">
-                      Theming
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/build-tools/">
-                      Build tools
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/webpack/">
-                      Webpack
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/accessibility/">
-                      Accessibility
-                    </a></li>
+                    <a href="/docs/4.1/getting-started/browsers-devices/">Browsers & devices</a>
+                </li>
             </ul>
         </div>
-        <div class="bd-toc-item active">
-            <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
-                Getting started
+        <div class="bd-toc-item <?php if($pagina =='tecnica'){echo 'active';}?>">
+            <a class="bd-toc-link" href="tecnica.php">
+                About
             </a>
 
             <ul class="nav bd-sidenav">
-                <li>
-                    <a href="/docs/4.1/getting-started/introduction/">
-                        Introduction
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/download/">
-                      Download
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/contents/">
-                      Contents
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/browsers-devices/">
-                      Browsers & devices
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/javascript/">
-                      JavaScript
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/theming/">
-                      Theming
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/build-tools/">
-                      Build tools
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/webpack/">
-                      Webpack
-                    </a></li>
-                <li>
-                    <a href="/docs/4.1/getting-started/accessibility/">
-                      Accessibility
-                    </a></li>
-            </ul>
-        </div>
-        <div class="bd-toc-item active">
-            <a class="bd-toc-link" href="/docs/4.1/about/overview/">About</a>
-
-            <ul class="nav bd-sidenav">
-                <li class="active bd-sidenav-active">
-                    <a href="/docs/4.1/about/overview/">Overview</a>
+                <li class="<?php if($seccio =='tecnica1'){echo 'active bd-sidenav-active';}?>">
+                    <a href="tecnica.php">Overview</a>
                 </li>
-                <li>
-                    <a href="/docs/4.1/about/brand/">Brand</a>
+                <li class="<?php if($seccio =='tecnica2'){echo 'active bd-sidenav-active';}?>">
+                    <a href="tecnica2.php">Brand</a>
                 </li>
-                <li>
-                    <a href="/docs/4.1/about/license/">License</a>
+                <li class="<?php if($seccio =='tecnica3'){echo 'active bd-sidenav-active';}?>">
+                    <a href="tecnica3.php">License</a>
                   </li>
-                <li>
-                    <a href="/docs/4.1/about/translations/">Translations</a>
+                <li class="<?php if($seccio =='tecnica4'){echo 'active bd-sidenav-active';}?>">
+                    <a href="tecnica4.php">Translations</a>
                 </li>
             </ul>
         </div>
