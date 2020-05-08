@@ -1,10 +1,19 @@
-
+<?php
+    session_start();
+    if (isset($_SESSION['sesionIniciada'])){
+        if ($_SESSION['sesionIniciada'] == false){
+            header("Location: index.php");
+        }
+    }else{
+        header("Location: index.php");
+    }
+?>
 <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
 
     <nav class="navbar-nav-scroll">
         <ul class="navbar-nav bd-navbar-nav flex-row">
             <li class="nav-item <?php if($pagina =='index'){echo 'active';}?>">
-                <a class="nav-link" href="index.php"><i class="fas fa-user"></i></a>
+                <a class="nav-link" href="logout.php"><i class="fas fa-user-alt-slash"></i></a>
             </li>
             <li class="nav-item <?php if($pagina =='home'){echo 'active';}?>">
                 <a class="nav-link" href="home.php"><i class="fas fa-home"></i></a>

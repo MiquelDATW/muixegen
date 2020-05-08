@@ -2,6 +2,12 @@
 <html lang="ca">
 
 <?php 
+    session_start();
+    if (isset($_SESSION['sesionIniciada'])){
+        if ($_SESSION['sesionIniciada'] == true){
+            header("Location: home.php");
+        }
+    }
     $titolPagina = "Inicieu la sessió";
     $pagina = "index";
 ?>
@@ -19,29 +25,31 @@
 </head>
 
 <body class="text-center">
-
+    
     <main class="container-fluid">
 
         <h1 class="text-center div-signin">
             Benvingut/da al <br/> Generador de Muixerangues
         </h1>
-        <form class="form-signin">
+        <?php
+            if (isset($_GET['errorLogin'])){
+        ?>
+        <div style="color:red">Usuari/contrasenya incorrectes</div>
+        <?php
+            }
+        ?>
+        <form class="form-signin" method="POST" action="login.php">
             <img class="mb-4" src="images/pinya_gran.jpg" alt="Pinya (Generador de Muixerangues)" width="100" height="100">
             <h1 class="h3 mb-3 font-weight-normal"><?php echo $titolPagina; ?></h1>
             <label for="inputEmail" class="sr-only">Adreça electrònica</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Adreça electrònica" required autofocus>
+            <input type="text" id="inputEmail" name="user" class="form-control" placeholder="Usuari" required autofocus>
             <label for="inputPassword" class="sr-only">Contrasenya</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Contrasenya" required>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Recorda'm
-                </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Inicia</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2019 Generador de Muixerangues</p>
-        </form>
-    </main>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contrasenya" required>
 
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Inicia</button>
+        </form>
+        <p class="mt-5 mb-3 text-muted">&copy; 2019 Generador de Muixerangues</p>
+    </main>
 
     <?php
         include('inc/footer.php');
