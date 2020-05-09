@@ -2,14 +2,15 @@
 <html lang="ca">
 
 <?php 
-    $titolPagina = "Àrea Tècnica";
-    $pagina = "tecnica";
-    $seccio = "tecnica4";
+    include("inc/connect.php");
+    include("inc/session.php");
+    $titolPagina = "Estadístiques: ".$_SESSION['nom'];
+    $pagina = "estadistiques";
 ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Generador de Muixerangues">
+    <meta name="description" content="Enfaixa't">
     <meta name="author" content="Miquel March">
     <link rel="icon" type="image/x-icon" href="images/pinya.jpg">
     <title><?php echo $titolPagina; ?></title>
@@ -36,14 +37,7 @@
                 <div class="jumbotron text-center" style="margin-bottom:0">
                     <h1 class="bd-title"><?php echo $titolPagina; ?></h1>
                 </div>
-
-	            <?php
-	                include('inc/carousel.php');
-	            ?>
-
             </main>
-        </div>
-    </div>
 
     <?php
         include('inc/footer.php');

@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Generador de Muixerangues">
+    <meta name="description" content="Enfaixa't">
     <meta name="author" content="Miquel March">
     <link rel="icon" type="image/x-icon" href="images/pinya.jpg">
     <title><?php echo $titolPagina; ?></title>
@@ -37,38 +37,38 @@
                     <h1 class="bd-title"><?php echo $titolPagina; ?></h1>
                 </div>
 
-				<div style="margin-top:30px">
-					<h2>
-                    	<i class="fas fa-user"></i>
-                    	<i class="fas fa-users"></i>
-                    	<i class="fas fa-user-check"></i>
-                    	<i class="fas fa-user-times"></i>
-                    	<i class="fas fa-user-edit"></i>
-                    	<i class="fas fa-user-cog"></i>
-                    	<i class="fas fa-id-badge"></i>
-                    	<i class="fas fa-id-card"></i>
-                    	<i class="fas fa-pencil-ruler"></i>
-                    	<i class="fas fa-tools"></i>
-                    	<i class="fas fa-sign-out-alt"></i>
-                    	<i class="fas fa-building"></i>
-                    	<i class="fas fa-tree"></i>
-                    	<i class="fas fa-calculator"></i>
-                    	<i class="fas fa-trophy"></i>
-                    	<i class="fas fa-chess-rook"></i>
-                    	<i class="fas fa-atom"></i>
-                    	<i class="fas fa-fire"></i>
-                    	<i class="fas fa-barcode"></i>
-                    	<i class="fas fa-sitemap"></i>
-                    	<i class="fas fa-book"></i>
-                    	<i class="fas fa-comment"></i>
-                    	<i class="fas fa-save"></i>
-                    	<i class="fas fa-chart-line"></i>
-                    	<i class="fas fa-chart-pie"></i>
-                    	<i class="fas fa-database"></i>
-                    	<i class="fas fa-rocket"></i>
-                    	<i class="fas fa-robot"></i>
+                <div style="margin-top:30px">
+                    <h2>
+                        <i class="fas fa-user"></i>
+                        <i class="fas fa-users"></i>
+                        <i class="fas fa-user-check"></i>
+                        <i class="fas fa-user-times"></i>
+                        <i class="fas fa-user-edit"></i>
+                        <i class="fas fa-user-cog"></i>
+                        <i class="fas fa-id-badge"></i>
+                        <i class="fas fa-id-card"></i>
+                        <i class="fas fa-pencil-ruler"></i>
+                        <i class="fas fa-tools"></i>
+                        <i class="fas fa-sign-out-alt"></i>
+                        <i class="fas fa-building"></i>
+                        <i class="fas fa-tree"></i>
+                        <i class="fas fa-calculator"></i>
+                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-chess-rook"></i>
+                        <i class="fas fa-atom"></i>
+                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-barcode"></i>
+                        <i class="fas fa-sitemap"></i>
+                        <i class="fas fa-book"></i>
+                        <i class="fas fa-comment"></i>
+                        <i class="fas fa-save"></i>
+                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-chart-pie"></i>
+                        <i class="fas fa-database"></i>
+                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-robot"></i>
                     </h2>
-				</div>
+                </div>
 
             </main>
         </div>

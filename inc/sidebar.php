@@ -8,11 +8,29 @@
     </form>
 
     <nav class="collapse bd-links" id="bd-docs-nav">
-        <div class="bd-toc-item">
+        <div class="bd-toc-item <?php if($pagina != 'tecnica'){echo 'd-none';}?> <?php if($pagina == 'tecnica'){echo 'active';}?>">
+            <a class="bd-toc-link" href="tecnica.php">
+                About
+            </a>
+            <ul class="nav bd-sidenav">
+                <li class="<?php if($seccio == 'tecnica1'){echo 'active bd-sidenav-active';}?>">
+                    <a href="tecnica.php">Overview</a>
+                </li>
+                <li class="<?php if($seccio == 'tecnica2'){echo 'active bd-sidenav-active';}?>">
+                    <a href="tecnica.php">Brand</a>
+                </li>
+                <li class="<?php if($seccio == 'tecnica3'){echo 'active bd-sidenav-active';}?>">
+                    <a href="tecnica.php">License</a>
+                  </li>
+                <li class="<?php if($seccio == 'tecnica4'){echo 'active bd-sidenav-active';}?>">
+                    <a href="tecnica.php">Translations</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bd-toc-item <?php if($pagina != 'assajos'){echo 'd-none';}?> <?php if($pagina == 'assajos'){echo 'active';}?>">
             <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
                 Getting started
             </a>
-
             <ul class="nav bd-sidenav">
                 <li>
                     <a href="/docs/4.1/getting-started/introduction/">Introduction</a>
@@ -28,23 +46,41 @@
                 </li>
             </ul>
         </div>
-        <div class="bd-toc-item <?php if($pagina =='tecnica'){echo 'active';}?>">
-            <a class="bd-toc-link" href="tecnica.php">
+        <div class="bd-toc-item <?php if($pagina != 'actuacions'){echo 'd-none';}?> <?php if($pagina == 'actuacions'){echo 'active';}?>">
+            <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
+                Getting started
+            </a>
+            <ul class="nav bd-sidenav">
+                <li>
+                    <a href="/docs/4.1/getting-started/introduction/">Introduction</a>
+                </li>
+                <li>
+                    <a href="/docs/4.1/getting-started/download/">Download</a>
+                </li>
+                <li>
+                    <a href="/docs/4.1/getting-started/contents/">Contents</a>
+                </li>
+                <li>
+                    <a href="/docs/4.1/getting-started/browsers-devices/">Browsers & devices</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bd-toc-item <?php if($pagina != 'missatges'){echo 'd-none';}?> <?php if($pagina == 'missatges'){echo 'active';}?>">
+            <a class="bd-toc-link" href="missatges.php">
                 About
             </a>
-
             <ul class="nav bd-sidenav">
-                <li class="<?php if($seccio =='tecnica1'){echo 'active bd-sidenav-active';}?>">
-                    <a href="tecnica.php">Overview</a>
+                <li class="<?php if($seccio == 'missatges1'){echo 'active bd-sidenav-active';}?>">
+                    <a href="missatges.php">Overview</a>
                 </li>
-                <li class="<?php if($seccio =='tecnica2'){echo 'active bd-sidenav-active';}?>">
-                    <a href="tecnica2.php">Brand</a>
+                <li class="<?php if($seccio == 'missatges2'){echo 'active bd-sidenav-active';}?>">
+                    <a href="missatges.php">Brand</a>
                 </li>
-                <li class="<?php if($seccio =='tecnica3'){echo 'active bd-sidenav-active';}?>">
-                    <a href="tecnica3.php">License</a>
+                <li class="<?php if($seccio == 'missatges3'){echo 'active bd-sidenav-active';}?>">
+                    <a href="missatges.php">License</a>
                   </li>
-                <li class="<?php if($seccio =='tecnica4'){echo 'active bd-sidenav-active';}?>">
-                    <a href="tecnica4.php">Translations</a>
+                <li class="<?php if($seccio == 'missatges4'){echo 'active bd-sidenav-active';}?>">
+                    <a href="missatges.php">Translations</a>
                 </li>
             </ul>
         </div>

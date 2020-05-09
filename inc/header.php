@@ -1,52 +1,31 @@
-<?php
-    session_start();
-    if (isset($_SESSION['sesionIniciada'])){
-        if ($_SESSION['sesionIniciada'] == false){
-            header("Location: index.php");
-        }
-    }else{
-        header("Location: index.php");
-    }
-?>
+
 <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
 
     <nav class="navbar-nav-scroll">
         <ul class="navbar-nav bd-navbar-nav flex-row">
-            <li class="nav-item <?php if($pagina =='index'){echo 'active';}?>">
+            <li class="nav-item">
                 <a class="nav-link" href="logout.php"><i class="fas fa-user-alt-slash"></i></a>
             </li>
-            <li class="nav-item <?php if($pagina =='home'){echo 'active';}?>">
+            <li class="nav-item <?php if($pagina == 'home'){echo 'active';}?>">
                 <a class="nav-link" href="home.php"><i class="fas fa-home"></i></a>
             </li>
-            <li class="nav-item <?php if($pagina =='tecnica'){echo 'active';}?>">
+            <li class="nav-item <?php if($pagina == 'tecnica'){echo 'active';}?>">
                 <a class="nav-link" href="tecnica.php"><i class="fas fa-pencil-ruler"></i></a>
             </li>
-            <li class="nav-item <?php if($pagina !='tecnica'){echo 'd-none';}?>">
-                <a class="nav-link" href="#">Muixeranguers/es</a>
+            <li class="nav-item <?php if($pagina == 'assajos'){echo 'active';}?>">
+                <a class="nav-link" href="assajos.php"><i class="fas fa-dumbbell"></i></a>
             </li>
-            <li class="nav-item <?php if($pagina !='tecnica'){echo 'd-none';}?>">
-                <a class="nav-link" href="#">Figures</a>
+            <li class="nav-item <?php if($pagina =='actuacions'){echo 'active';}?>">
+                <a class="nav-link" href="actuacions.php"><i class="fas fa-trophy"></i></a>
             </li>
-            <li class="nav-item <?php if($pagina !='tecnica'){echo 'd-none';}?>">
-                <a class="nav-link" href="#">Assajos</a>
+            <li class="nav-item <?php if($pagina =='missatges'){echo 'active';}?>">
+                <a class="nav-link" href="missatges.php"><i class="fas fa-comment"></i></a>
             </li>
-            <li class="nav-item <?php if($pagina !='tecnica'){echo 'd-none';}?>">
-                <a class="nav-link" href="#">Actuacions</a>
-            </li>
-            <li class="nav-item <?php if($pagina !='tecnica'){echo 'd-none';}?>">
-                <a class="nav-link" href="#">Estadístiques</a>
-            </li>
-            <li class="nav-item <?php if($pagina =='tecnica'){echo 'd-none';}?>">
-                <a class="nav-link" href="#">Muixeranguer/a</a>
-            </li>
-            <li class="nav-item <?php if($pagina =='tecnica'){echo 'd-none';}?>">
-                <a class="nav-link" href="#">Colla</a>
-            </li>
-            <li class="nav-item <?php if($pagina =='tecnica'){echo 'd-none';}?>">
-                <a class="nav-link" href="#">Novetats</a>
+            <li class="nav-item <?php if($pagina =='estadistiques'){echo 'active';}?>">
+                <a class="nav-link" href="estadistiques.php"><i class="fas fa-chart-line"></i></a>
             </li>
         </ul>
     </nav>
 
-    <p class="d-none">Generador de Muixerangues</p>
+    <p class="d-none">Enfaixa't</p>
 </header>

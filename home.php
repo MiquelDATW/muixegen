@@ -2,14 +2,15 @@
 <html lang="ca">
 
 <?php 
-    include("inc/conexio.php");
-    $titolPagina = "Generador de Muixerangues";
+    include("inc/connect.php");
+    include("inc/session.php");
+    $titolPagina = "Enfaixa't: ".$_SESSION['nom'];
     $pagina = "home";
 ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Generador de Muixerangues">
+    <meta name="description" content="Enfaixa't">
     <meta name="author" content="Miquel March">
     <link rel="icon" type="image/x-icon" href="images/pinya.jpg">
     <title><?php echo $titolPagina; ?></title>
@@ -36,13 +37,17 @@
             ?>
 
             <main role="main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                <!--
                 <div class="jumbotron text-center" style="margin-bottom:0">
                     <h1 class="bd-title"><?php echo $titolPagina; ?></h1>
                 </div>
+                -->
                 <div style="margin-top:30px">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1>Notificaciones</h1><hr><h3>Assajos</h3>
+                            <h1>Novetats</h1>
+                            <hr>
+                            <h3>Assajos</h3>
                             <?php
                                 $result = pg_query($conn, $sql1);
                                 while($row = pg_fetch_assoc($result)){
@@ -53,10 +58,12 @@
                                         $faIcon = '<i style="color:grey;" class="far fa-check-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:red;" class="far fa-times-circle"></i>';
                                     }
                             ?>
-                                <div onclick='window.location.href = "actAssistencia.php?id_actuacio=<?php echo $row["id"]?>&user_id=<?php echo $_SESSION['user_id']?>&assistencia=<?php echo $assistencia; ?>"' style="cursor:pointer;"><?php echo $row["actuacio_name"]; ?> - <?php echo $row["data"]; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $faIcon; ?></div>
+                                <div onclick='window.location.href = "assistencia.php?id_actuacio=<?php echo $row["id"]?>&user_id=<?php echo $_SESSION['user_id']?>&assistencia=<?php echo $assistencia; ?>"' style="cursor:pointer;"><?php echo $row["actuacio_name"]; ?> - <?php echo $row["data"]; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $faIcon; ?></div>
                             <?php
                                 }
-                            ?><hr><h3>Actuacions</h3>
+                            ?>
+                            <hr>
+                            <h3>Actuacions</h3>
                             <?php
                                 $result = pg_query($conn, $sql2);
                                 while($row = pg_fetch_assoc($result)){
@@ -67,7 +74,7 @@
                                         $faIcon = '<i style="color:grey;" class="far fa-check-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:red;" class="far fa-times-circle"></i>';
                                     }
                             ?>
-                                <div onclick='window.location.href = "actAssistencia.php?id_actuacio=<?php echo $row["id"]?>&user_id=<?php echo $_SESSION['user_id']?>&assistencia=<?php echo $assistencia; ?>"' style="cursor:pointer;"><?php echo $row["actuacio_name"]; ?> - <?php echo $row["data"]; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $faIcon; ?></div>
+                                <div onclick='window.location.href = "assistencia.php?id_actuacio=<?php echo $row["id"]?>&user_id=<?php echo $_SESSION['user_id']?>&assistencia=<?php echo $assistencia; ?>"' style="cursor:pointer;"><?php echo $row["actuacio_name"]; ?> - <?php echo $row["data"]; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $faIcon; ?></div>
                             <?php
                                 }
                             ?>
