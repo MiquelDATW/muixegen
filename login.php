@@ -6,7 +6,7 @@
     $user = $_POST['user'];
     $password = $_POST['password'];
 
-    $sql = "SELECT u.password_crypt, u.id, e.name FROM res_users u, hr_employee e WHERE e.id = u.id AND login = '" . $user . "';";  
+    $sql = "SELECT u.password_crypt, u.id, e.name FROM res_users u, hr_employee e WHERE e.id = u.id AND login = '" . $user . "';";
     $result = pg_query($conn, $sql);
     $row = pg_fetch_assoc($result);
     

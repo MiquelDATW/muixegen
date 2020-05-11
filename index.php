@@ -8,16 +8,16 @@
             header("Location: home.php");
         }
     }
-    $titolPagina = "Enfaixa't";
+    $titol_pagina = "Enfaixa't";
     $pagina = "index";
 ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Ena">
+    <meta name="description" content="Enfaixa't">
     <meta name="author" content="Miquel March">
     <link rel="icon" type="image/x-icon" href="images/pinya.jpg">
-    <title><?php echo $titolPagina; ?></title>
+    <title><?php echo $titol_pagina; ?></title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="css/fontawesome.min.css">
     <link type="text/css" rel="stylesheet" href="css/docs.min.css">
@@ -29,7 +29,7 @@
     <main class="container-fluid">
 
         <h1 class="text-center div-signin">
-            Benvingut/da a <br/> <?php echo $titolPagina; ?>
+            Benvingut/da a <br/> <?php echo $titol_pagina; ?>
         </h1>
         <?php
             if (isset($_GET['error_login'])){

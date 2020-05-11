@@ -2,7 +2,7 @@
 <html lang="ca">
 
 <?php 
-    $titolPagina = "Àrea Tècnica";
+    $titol_pagina = "Àrea Tècnica";
     $pagina = "tecnica";
     $seccio = "tecnica1";
 ?>
@@ -12,7 +12,7 @@
     <meta name="description" content="Enfaixa't">
     <meta name="author" content="Miquel March">
     <link rel="icon" type="image/x-icon" href="images/pinya.jpg">
-    <title><?php echo $titolPagina; ?></title>
+    <title><?php echo $titol_pagina; ?></title>
     <link type="text/css" rel="stylesheet" href="css/fontawesome.min.css">
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="css/docs.min.css">
@@ -34,7 +34,7 @@
 
             <main role="main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
                 <div class="jumbotron text-center" style="margin-bottom:0">
-                    <h1 class="bd-title"><?php echo $titolPagina; ?></h1>
+                    <h1 class="bd-title"><?php echo $titol_pagina; ?></h1>
                 </div>
 
                 <div style="margin-top:30px">
