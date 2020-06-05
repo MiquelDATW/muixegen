@@ -24,60 +24,81 @@
     <?php
         include('inc/header.php');
 
-        $sql1 = "SELECT id, assistencia, actuacio_name, data FROM hr_employee_actuacio WHERE data >= '" . date("Y-m-d") . "' AND employee_id = '" . $_SESSION['user_id'] . "' AND tipus = 'assaig';";
-        $sql2 = "SELECT id, assistencia, actuacio_name, data FROM hr_employee_actuacio WHERE data >= '" . date("Y-m-d") . "' AND employee_id = '" . $_SESSION['user_id'] . "' AND tipus = 'actuacio';";
+        $sql1 = "SELECT id, assistencia, actuacio_id, actuacio_name, data FROM hr_employee_actuacio WHERE data > '" . date("Y-m-d") . "' AND employee_id = '" . $_SESSION['emp_id'] . "' AND tipus = 'assaig' AND actuacio_id IN (SELECT id FROM pinya_actuacio WHERE data_inici > '" . date("Y-m-d") . "' AND state = 'draft' AND missatge_enviat = 't' AND obert = 't' AND tipus = 'assaig') ORDER BY data ASC;";
+
+        $sql2 = "SELECT id, assistencia, actuacio_id, actuacio_name, data FROM hr_employee_actuacio WHERE data > '" . date("Y-m-d") . "' AND employee_id = '" . $_SESSION['emp_id'] . "' AND tipus = 'actuacio' AND actuacio_id IN (SELECT id FROM pinya_actuacio WHERE data_inici > '" . date("Y-m-d") . "' AND missatge_enviat = 't' AND tipus = 'actuacio') ORDER BY data ASC;";
+
     ?>
 
     <div class="container-fluid">
         <div class="row flex-xl-nowrap">
 
 
+            <!--
             <?php
                 include('inc/sidebar.php');
-            ?>
+            ?>-->
 
             <main role="main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
-                <!--
-                <div class="jumbotron text-center" style="margin-bottom:0">
-                    <h1 class="bd-title"><?php echo $titol_pagina; ?></h1>
-                </div>
-                -->
                 <div style="margin-top:30px">
                     <div class="row">
                         <div class="col-sm-12">
                             <h1>Novetats</h1>
                             <hr>
                             <h3>Assajos</h3>
-                            <?php
-                                $result = pg_query($conn, $sql1);
-                                while($row = pg_fetch_assoc($result)){
-                                    $assistencia = "True";
-                                    $faIcon = '<i style="color:green;" class="far fa-check-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:grey;" class="far fa-times-circle"></i>';
-                                    if ($row['assistencia'] == 't'){
-                                        $assistencia = "False";
-                                        $faIcon = '<i style="color:grey;" class="far fa-check-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:red;" class="far fa-times-circle"></i>';
+                            <table class="table table-dark">
+                                <?php
+                                    $result = pg_query($conn, $sql1);
+                                    while($row = pg_fetch_assoc($result)){
+                                        $assistencia = "True";
+                                        if ($row['assistencia'] == 't'){
+                                            $assistencia = "False";
+                                        }
+                                        echo "<tr>";
+                                        echo "<td>".$row['actuacio_name']."</td>";
+                                        echo "<td>".$row['data']."</td>";
+                                        if ($assistencia == "True"){
+                                    ?>
+                                            <td><b><a href="assistencia.php?actuacio_id=<?php echo $row["id"]?>&emp_id=<?php echo $_SESSION['emp_id']?>&assistencia=<?php echo $assistencia; ?>" style="color: green;">Apuntar-se <i class="fas fa-sign-in-alt"></i></a></b></td>
+                                    <?php
+                                        }else{
+                                    ?>
+                                            <td><b><a href="assistencia.php?actuacio_id=<?php echo $row["id"]?>&emp_id=<?php echo $_SESSION['emp_id']?>&assistencia=<?php echo $assistencia; ?>" style="color: red;">Esborrar-se <i class="fas fa-sign-out-alt"></i></a></b></td>
+                                    <?php
+                                        }
+                                        echo "</tr>";
                                     }
-                            ?>
-                                <div onclick='window.location.href = "assistencia.php?id_actuacio=<?php echo $row["id"]?>&user_id=<?php echo $_SESSION['user_id']?>&assistencia=<?php echo $assistencia; ?>"' style="cursor:pointer;"><?php echo $row["actuacio_name"]; ?> - <?php echo $row["data"]; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $faIcon; ?></div>
-                            <?php
-                                }
-                            ?>
+                                ?>
+                            </table>
                             <hr>
                             <h3>Actuacions</h3>
-                            <?php
-                                $result = pg_query($conn, $sql2);
-                                while($row = pg_fetch_assoc($result)){
-                                    $assistencia = "True";
-                                    $faIcon = '<i style="color:green;" class="far fa-check-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:grey;" class="far fa-times-circle"></i>';
-                                    if ($row['assistencia'] == 't'){
-                                        $assistencia = "False";
-                                        $faIcon = '<i style="color:grey;" class="far fa-check-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:red;" class="far fa-times-circle"></i>';
+                            <table class="table table-dark">
+                                <?php
+                                    $result = pg_query($conn, $sql2);
+                                    while($row = pg_fetch_assoc($result)){
+                                        $assistencia = "True";
+                                        if ($row['assistencia'] == 't'){
+                                            $assistencia = "False";
+                                        }
+                                        echo "<tr>";
+                                        ?>
+                                            <td><a href="actuacio.php?actuacio_id=<?php echo $row["actuacio_id"]?>" style="color: white;"><?php echo $row["actuacio_name"]?></a></td>
+                                        <?php
+                                        echo "<td>".$row['data']."</td>";
+                                        if ($assistencia == "True"){
+                                    ?>
+                                            <td><b><a href="assistencia.php?actuacio_id=<?php echo $row["id"]?>&emp_id=<?php echo $_SESSION['emp_id']?>&assistencia=<?php echo $assistencia; ?>" style="color: green;">Apuntar-se <i class="fas fa-sign-in-alt"></i></a><b></td>
+                                    <?php
+                                        }else{
+                                    ?>
+                                            <td><b><a href="assistencia.php?actuacio_id=<?php echo $row["id"]?>&emp_id=<?php echo $_SESSION['emp_id']?>&assistencia=<?php echo $assistencia; ?>" style="color: red;">Esborrar-se <i class="fas fa-sign-out-alt"></i></a></b></td>
+                                    <?php
+                                        }
+                                        echo "</tr>";
                                     }
-                            ?>
-                                <div onclick='window.location.href = "assistencia.php?id_actuacio=<?php echo $row["id"]?>&user_id=<?php echo $_SESSION['user_id']?>&assistencia=<?php echo $assistencia; ?>"' style="cursor:pointer;"><?php echo $row["actuacio_name"]; ?> - <?php echo $row["data"]; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $faIcon; ?></div>
-                            <?php
-                                }
-                            ?>
+                                ?>
+                            </table>
+                            <hr>
                         </div>
 
                     </div>

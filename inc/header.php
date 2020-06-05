@@ -9,9 +9,10 @@
             <li class="nav-item <?php if($pagina == 'home'){echo 'active';}?>">
                 <a class="nav-link" href="home.php"><i class="fas fa-home"></i></a>
             </li>
+            <!--
             <li class="nav-item <?php if($pagina == 'tecnica'){echo 'active';}?>">
                 <a class="nav-link" href="tecnica.php"><i class="fas fa-pencil-ruler"></i></a>
-            </li>
+            </li>-->
             <li class="nav-item <?php if($pagina == 'assajos'){echo 'active';}?>">
                 <a class="nav-link" href="assajos.php"><i class="fas fa-dumbbell"></i></a>
             </li>

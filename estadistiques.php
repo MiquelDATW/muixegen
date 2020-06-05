@@ -28,10 +28,10 @@
     <div class="container-fluid">
         <div class="row flex-xl-nowrap">
 
-
+            <!--
             <?php
                 include('inc/sidebar.php');
-            ?>
+            ?>-->
 
             <main role="main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
                 <div class="jumbotron text-center" style="margin-bottom:0">

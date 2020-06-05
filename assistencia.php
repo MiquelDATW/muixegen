@@ -1,6 +1,12 @@
 <?php
 	include("inc/connect.php");
-	$sql="UPDATE hr_employee_actuacio SET assistencia = " . $_GET['assistencia'] . " WHERE id = '" . $_GET['id_actuacio'] . "' AND employee_id = '" . $_GET['user_id'] . "';";
+	$assistencia =  $_GET['assistencia'];
+	$actuacio = $_GET['actuacio_id'];
+	settype($actuacio, 'int');
+	$employee = $_GET['emp_id'];
+	settype($employee, 'int');
+
+	$sql="UPDATE hr_employee_actuacio SET assistencia = " . $assistencia . " WHERE id = '" . $actuacio . "' AND employee_id = '" . $employee . "';";
 	
 	
 	$result = pg_query($conn, $sql);

@@ -20,22 +20,52 @@
 
 </head>
 
-<body>
+<body>  
     <?php
         include('inc/header.php');
+
+        $sql1 = "SELECT id, assistencia, actuacio_id, data FROM hr_employee_actuacio WHERE data <= '" . date("Y-m-d") . "' AND employee_id = '" . $_SESSION['emp_id'] . "' AND tipus = 'assaig' AND actuacio_id IN (SELECT id FROM pinya_actuacio WHERE data_inici <= '" . date("Y-m-d") . "' AND state != 'draft' AND missatge_enviat = 't' AND tipus = 'assaig') ORDER BY data DESC;";
     ?>
 
     <div class="container-fluid">
         <div class="row flex-xl-nowrap">
 
-
+            <!--
             <?php
                 include('inc/sidebar.php');
-            ?>
+            ?>-->
 
             <main role="main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
-                <div class="jumbotron text-center" style="margin-bottom:0">
-                    <h1 class="bd-title"><?php echo $titol_pagina; ?></h1>
+                <div style="margin-top:30px">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1>Assajos passats</h1>
+                            <table class="table table-dark">
+                                <?php
+                                    $result = pg_query($conn, $sql1);
+                                    while($row = pg_fetch_assoc($result)){
+                                        $assistencia = "True";
+                                        if ($row['assistencia'] == 'f'){
+                                            $assistencia = "False";
+                                        }
+                                        echo "<tr>";
+                                        $sql0 = "SELECT name, state FROM pinya_actuacio WHERE id = '" . $row['actuacio_id'] . "';";
+                                        $result0 = pg_query($conn, $sql0);
+                                        while($row0 = pg_fetch_assoc($result0)){
+                                            echo "<td>".$row0['name']."</td>";
+                                        }
+                                        echo "<td>".$row['data']."</td>";
+                                        if ($assistencia == "True"){
+                                            echo "<td>Vaig assistir <i style='color: green;' class='fas fa-check-square'></i></td>";
+                                        }else{
+                                            echo "<td>No vaig anar <i style='color: red;' class='fas fa-times-circle'></i></td>";
+                                        }
+                                        echo "</tr>";
+                                    }
+                                ?>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </main>
 
